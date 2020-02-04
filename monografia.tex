@@ -21,6 +21,7 @@
 \usepackage{verbatim}
 \usepackage[titletoc,title]{appendix}
 \usepackage[left=3cm, right=3cm,top=3cm, bottom=2.5cm]{geometry}
+\usepackage[table,xcdraw]{xcolor}
 
 \newcommand{\bigrule}{\titlerule[1mm]}
 \definecolor{c1}{rgb}{0,0.5,0}
@@ -105,8 +106,6 @@ Ciencias\\Escuela de F\'{i}sica\\2019}
 %hotspots de lightnings o tormentas alrededor del mundo (el fenómeno del catatumbo :3 )
 %Breve explicación de qué son los TLEs (historia de la pagina 30-44 del libro )
 %Enfásis en los ELVES
-
-
 
 \chapter{Tormentas eléctricas}\label{tormentas}
 Las tormentas eléctricas se producen en nubes densas de gran extensión vertical, conocidas como cumulonimbos, que se forman a partir del vapor de agua transportado por potentes corrientes de aire ascendente. Este fenómeno meteorológico se distingue por la presencia de rayos y truenos, que usualmente van acompañados de vientos y lluvias fuertes, o a veces de granizo o de nieve. 
@@ -234,6 +233,7 @@ en la figura se muestran los top 10 FRD (flash rate density) \cite{AlbrechtEtal2
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%% CHAPTER 2  %%%%%
 %%%%%%%%%%%%%%%%%%%%%%
+
 \chapter{Eventos Luminosos Transitorios en la alta atmósfera}\label{TLEs}
 Los Eventos Luminosos Transitorios, denominados como TLE, son emisiones cortas de luz que ocurren encima de las tormentas eléctricas, en las capas más altas de la atmósfera, es decir, en la estratósfera, la mesósfera y en la parte baja de la ionósfera. Estos eventos se originan a partir de las descargas eléctricas que ocurren entre las nubes, o entre las nubes y el suelo \cite{DwyerUman2014}. Hasta ahora, se han reportado los siguientes tipos de TLEs: Sprites, Blue Starters, Blue Jets y Jets Gigantes, Elves y Halos. La dinámica de estos fenómenos electromagnéticos, que involucra corrientes eléctricas, ondas electromagnéticas y gases ionizados, aún no se entiende por completo.
 
@@ -290,7 +290,7 @@ Los elves están asociados a las descargas -CG que tienen corrientes de pico má
 \begin{figure}
     \centering
     \includegraphics[scale=0.33]{figures/TLE_global_rate.png}
-    \caption{Densidad de ocurrencia global de los TLEs m\'as comunes: (a) Sprites y jets gigantes, (b) elves y (c) halos. Se puede observar que los elves son m\'as frecuentes que los sprites, seguidos de los halos y los jets gigantes. (d) Se presenta la temperatura de la superficie del mar entre julio de 2004 y diciembre de 2005, para compararla con la densidad de ocurrencia de los elves (tomado de \cite{chen2008}).}
+    \caption[Densidad de ocurrencia global de los TLEs m\'as comunes]{Densidad de ocurrencia global de los TLEs m\'as comunes: (a) Sprites y jets gigantes, (b) elves y (c) halos. Se puede observar que los elves son m\'as frecuentes que los sprites, seguidos de los halos y los jets gigantes. (d) Se presenta la temperatura de la superficie del mar entre julio de 2004 y diciembre de 2005, para compararla con la densidad de ocurrencia de los elves (tomado de \cite{chen2008}).}
     \label{fig:TLE_global_rate}
 \end{figure}
 
@@ -309,9 +309,7 @@ El nombre ELVES era originalmente un acrónimo de Emission of Light and Very low
 \section{Halos}
 Son emisiones de luz difusa en forma de disco, que ocurren dentro de un campo eléctrico casi-estático como los sprites. Al principio estos discos se confundían con elves y como aparecían junto a los sprites solían llamarlos \textit{sprelves}. Ahora se sabe que los halos pueden aparecer junto con los sprites o por sí solos. De hecho, en una campaña de sensores ópticos en globos \cite{BeringEtal2004}, se observó que muchos halos asociados a rayos +CG iban acompañados de sprites, a diferencia de los halos asociados a rayos -CG.
 
-Además su diámetro es mucho menor que el de los elves --máximo de 100 Km-- y su duración es mayor (alrededor de 1 ms). Estos eventos se producen por debajo de los elves, entre los 65 y 80 Km de altitud. Videos de alta velocidad \cite{ArmstrongLyons2000, StanleyEtal1999, StenbaekEtal2000} han demostrado que el halo es un resplandor amorfo descendente en forma de lente que se inicia típicamente uno o dos milisegundos después del return stroke, y persiste de uno a tres milisegundos. Su brillo es rojo y ronda entre los 0.5 y 1 MR \cite{FullekrugEtal2006}. Like elves, halos tend to be centered more
-or less directly over the parent CG, whereas the sprite centroid can often be
-offset by up to 50 km (Wescott et al., 2001; Lyons, 1996b).
+Además su diámetro es mucho menor que el de los elves --máximo de 100 Km-- y su duración es mayor (alrededor de 1 ms). Estos eventos se producen por debajo de los elves, entre los 65 y 80 Km de altitud. Videos de alta velocidad \cite{ArmstrongLyons2000, StanleyEtal1999, StenbaekEtal2000} han demostrado que el halo es un resplandor amorfo descendente en forma de lente que se inicia típicamente uno o dos milisegundos después del return stroke, y persiste de uno a tres milisegundos. Su brillo es rojo y ronda entre los 0.5 y 1 MR \cite{FullekrugEtal2006}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -320,37 +318,112 @@ offset by up to 50 km (Wescott et al., 2001; Lyons, 1996b).
 \chapter{Detección global de los Elves}\label{deteccion}
 La primera observación clara de un elves se hizo a partir de una cámara de alta velocidad a bordo del Transbordador Espacial en su misión STS-41 (1990) \cite{BoeckEtal1992}. Estos dispositivos son lo suficientemente sensibles para detectar las emisiones de luz en el aire, puesto que una simple molécula de nitrógeno ionizada emite luz a 427nm y 391nm, y la cámara es sensible a longitudes de onda entre los 360 y 720 nm, con un pico de sensibilidad en 440 nm. En este caso, el vídeo fue grabado en formato blanco y negro, con una resolución temporal de $\approx 17$ ms. La imagen fue mejorada, restando el fondo y expandiendo la escala de grises, para determinar si el aumento en el brillo era una fluctuación aleatoria o la luminosidad de un rayo. Este evento fue observado a una altitud alrededor de los 95 km, en coincidencia con un rayo producido en una tormenta oceánica tropical directamente debajo del elves \cite{BoeckEtal1992}.  
 
-Más adelante, estos fenómenos se empezaron a estudiar a partir de arreglos lineales (verticales y horizontales) de fot\'ometros, con un tiempo de resolución mejorado a $40\,\mu$s. El campo de visión individual de cada uno de los fotómetros dispuestos en un arreglo horizontal, originaron las primeras medidas de la expansión lateral rápida de la luminosidad óptica de los elves, con una resolución temporal de $30\,\mu$s \cite{InanEtal1997}. 
+Más adelante, estos fenómenos se empezaron a estudiar a partir de arreglos lineales de fot\'ometros, con un tiempo de resolución mejorado a $40\,\mu$s. El campo de visión individual de cada uno de los fotómetros dispuestos en un arreglo horizontal \cite{InanEtal1997}, originaron las primeras medidas de la expansión lateral rápida de la luminosidad óptica de los elves, con una resolución temporal de $30\,\mu$s . 
 
-Por otra parte, el experimento ISUAL --a bordo del sat\'elite FORMOSAT-2-- detect\'o diferentes TLEs utilizando foto-multiplicadores (PMT) convencionales y multi-ánodos, con resoluciones temporales de 100 y $50\,\mu$s respectivamente. Desde julio de 2004 a junio de 2007, ISUAL registró 5.434 elves, 633 sprites, 657 halos y 13 jets gigantes, concluyendo que los elves son el tipo de TLE que ocurren con m\'as frecuencia. Adem\'as, las observaciones de ISUAL indican que la tasa de ocurrencia de los elves es 10 veces mayor sobre los océanos que sobre la tierra, aumentando r\'apidamente cuando la temperatura de la superficie del mar supera los 26 grados centígrados \cite{chen2008}. Otras misiones espaciales como Taranis [7], Firefly [8] y JEM-EUSO [9] han incluído las observaciones de elves en sus programas.....
+Por otra parte, el experimento ISUAL \cite{chen2008} --a bordo del sat\'elite FORMOSAT-2-- se diseñó para detectar diferentes TLEs a través de foto-multiplicadores (PMT) convencionales y multi-ánodos, con resoluciones temporales de 100 y $50\,\mu$s respectivamente. Los datos registrados por ISUAL desde julio de 2004 a junio de 2007 (5.434 elves, 633 sprites, 657 halos y 13 jets gigantes) permitieron concluir que los elves ocurren con m\'as frecuencia respecto a los demás TLEs como se observa en la figura \ref{fig:TLE_global_rate}. Otras misiones espaciales como Taranis [7], Firefly [8] y JEM-EUSO [9] han incluído las observaciones de elves en sus programas.....
 
-Mientras que estas misiones fueron desarrolladas específicamente para el estudio de los TLEs, los Detectores de Fluorescencia (FD) del Observatorio Pierre Auger descubrieron por accidente un candidato a elves durante un turno de observación en el año 2005 \cite{Mussa2019}. Este observatorio es el más grande del mundo en infraestructura para el estudio de rayos cósmicos de ultra-alta energía, que además de su actividad principal inició un programa de estudios en Cosmo-geofísica para explotar las características de sus FD en el estudio de eventos luminosos transitorios. El Observatorio Pierre Auger podría ser el mejor instrumento con bases en la tierra para la observación de eventos en la banda del ultravioleta cercano \cite{MussaCiaccio2012}, por lo que a continuación se describe su funcionamiento.  
+Mientras que estas misiones fueron desarrolladas específicamente para el estudio de los TLEs, el Detector de Fluorescencia (FD) del Observatorio Pierre Auger descubrió por accidente un candidato a elves durante un turno de observación en el año 2005 \cite{Mussa2019}. Este observatorio, ubicado en en Malargue, Argentina, es el más grande del mundo en infraestructura para el estudio de rayos cósmicos de ultra-alta energía, que combina las facilidades de un Detector de Superficie (SD) y un Detector de Fluorescencia (FD). Además de su actividad principal, el observatorio inició un programa de estudios en Cosmo-geofísica para explotar las características de su FD en el estudio de eventos luminosos transitorios. El Observatorio Pierre Auger podría ser el mejor instrumento con bases en la tierra para la observación de eventos en la banda del ultravioleta cercano \cite{MussaCiaccio2012}, por lo que a continuación se describe su funcionamiento.  
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Elves en el Observatorio Pierre Auger}
-Desde el 2013 el Observatorio Pierre Auger ha estado tomando datos con un trigger especial apuntado al estudio de los elves. Como se dijo anteriormente, la detecci\'on de elves requiere c\'amaras de alta velocidad y con una sensibilidad capaz de detectar fotones del cercano UV o por encima de los 600 nm. En este caso el FD consta de cuatro sitios de observaci\'on localizados en la cima de pequeñas colinas en los límites del arreglo de los detectores de superficie en Malargue, Argentina (ver figura). 
-
-Cada edificio del FD contiene seis telescopios independientes, cada uno con un campo de visión de 30 × 30 grados en acimut y elevación como se muestra en la figura . La combinación del campo de visión de los seis telescopios cubre 180 grados en acimut. Las c\'amaras de los telescopios est\'an compuestas de 440 PMTs hexagonales en un arreglo matricial de 22 filas por 20 columnas como se muestra en la figura c. Estos PMTs representan los p\'ixeles y est\'an ubicados sobre una superficie esf\'erica con pasos de 1.5$\circ$ (ver figura a y b). 
-
-Un rayo c\'osmico es visto en la c\'amara como una l\'inea de p\'ixeles activados con un patr\'on geom\'etrico y una clara secuencia temporal, mientras que los elves forman una estructura de anillo..... como se muestra en la figura. Para la selecci\'on online de los elves en el FD se han realizado further estudios basados en sub-triggers auxiliares que permitan modificar el tigger del tercer nivel del observatorio para adquirir eventos con una eficiencia razonable. 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.5]{figures/cr_vs_elves.png}
-    \caption{Caption}
-    \label{fig:my_label}
+    \includegraphics[scale=0.5]{figures/auger_sites.png}
+    \caption[Distribuci\'on de los Detectores de Superficie y Fluorescencia del Observatorio Pierre Auger.]{Distribuci\'on de los Detectores de Superficie y de Fluorescencia del Observatorio Pierre Auger. Los puntos grises muestran las posiciones de las estaciones del SD, mientras que las l\'ineas indican el campo de visi\'on de los 24 telescopios del FD. Los telescopios est\'an ubicados en el per\'imetro del SD en cuatro edificios: Los Leones, Los Morados, Loma Amarilla y Coihueco \cite{AbrahamEtal2010}. }
+    \label{fig:auger_sites}
 \end{figure}
-\subsection{Trigger de elves en el FD}
-Consta de 3 etapas:
+El detector de Fluorescencia del Observatorio Pierre Auger consta de cuatro sitios de observaci\'on localizados en la cima de pequeñas colinas (Los Leones, Los Morados, Loma Amarilla y Coihueco), en los límites del arreglo del SD (ver figura \ref{fig:auger_sites}). Los cuatro edificios del FD contienen seis telescopios independientes, cada uno con un campo de visión de 30 grados en acimut $\times$ 30 grados de elevación (ver figura superior de \ref{fig:fd_scheme}). La combinación de los seis telescopios cubre 180 grados en acimut \cite{AbrahamEtal2010}. En cada telescopio, la luz entra a través de una ventana con un filtro UV y es enfocada a través de un espejo esférico segmentado sobre la cámara. Los elementos del telescopio se muestran en la parte inferior izquierda de la figura \ref{fig:fd_scheme}. Las c\'amaras de los telescopios est\'an compuestas de 440 PMTs hexagonales en un arreglo matricial de 22 filas por 20 columnas como se muestra en la figura c de \ref{fig:fd_scheme}. Estos PMTs representan los p\'ixeles de la c\'amara y est\'an ubicados sobre una superficie esf\'erica con pasos de 1.5$^\circ$ \cite{AbrahamEtal2010} (ver figura a y b de \ref{fig:fd_scheme}). 
+
+La longitud de onda de la luz detectada en cada PMT varia desde 300 hasta 420 nm y los pulsos de luz se digitalizan cada 100 ns. Para la selección en línea de los eventos, la data de cada PMT es procesada a través de un sistema de disparo de tres etapas \cite{MussaCiaccio2012}. Los 24 telescopios del FD son ideales para la observación de los elves, pero para la selecci\'on en línea de estos eventos con una eficiencia razonable, se han realizado estudios basados en sub-triggers auxiliares que permitieron modificar el tercer nivel del sistema de disparo \cite{Mussa2019}.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{figures/eye_scheme.png}
+    
+    \includegraphics[scale=0.35]{figures/telescope_scheme.png} \,\,\, \includegraphics[scale=0.35]{figures/camera.png}
+    \caption[]{Arriba: Estructura de los edificios del FD con seis telescopios de fluorescencia independientes. Cada uno tiene un campo de visión de 30 $\times$ 30 grados en acimut y elevación, que en total cubren 180 grados en acimut. Abajo, a la izquierda: Estructura y componentes de los telescopios de cada FD; a la derecha: Construcci\'on geom\'etrica de las c\'amaras del FD: a) Los centros de los pixeles est\'an ubicados sobre una superficie esf\'erica en pasos de 1.5 grados, b) posicionamiento de los vertices del pixel respecto a su centro, y c) arreglo de los 440 pixeles de la c\'amara en una matriz de 22 $\times$ 20. Tomado de \cite{AbrahamEtal2010}.}
+    \label{fig:fd_scheme}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Sistema de disparo del FD}
+El disparador del FD está estructurado en tres niveles \cite{Mussa2019}: 
 \begin{enumerate}
-    \item El trigger de la primera etapa opera a nivel del pixel, con un umbral ajustable que mantiene la tasa de activaci\'on de los PMT a 100 Hz.
-    \item En la segunda etapa se buscan segmentos de al menos 5 pixeles adyacentes que pasaron el primer trigger. 
-    \item El tercer nivel de disparo (TLT) está diseñado para vetar eficientemente eventos debido a rayos cercanos, presentando una alta multiplicidad de píxeles disparados distribuidos aleatoriamente en el tiempo a través de la cámara dentro de la ventana de tiempo de 100 $\mu$s.
+    \item El disparo del primer nivel (DPN) opera a nivel del píxel, con un umbral ajustable que mantiene la tasa de activación de los PMT a 100 Hz.
+    \item El disparo del segundo nivel (DSN) busca segmentos con trayectorias de al menos 5 píxeles adyacentes que pasaron la primera etapa. 
+    \item El disparo del tercer nivel (DTN) está diseñado para excluir eficientemente los rayos cercanos. Los eventos de rayos presentan una alta multiplicidad de píxeles disparados que se distribuyen de forma aleatoriamente temporal a través de la cámara, dentro de una ventana de tiempo de 100 $\mu$s. 
 \end{enumerate}
 
-Con este trigger 
+El DTN basado en la multiplicidad, instalado a finales del 2007 como reemplazo de una versi\'on previa que era menos eficiente (lo que permiti\'o el hallazgo inesperado de elves en los primeros datos del Observatorio Pierre Auger \cite{MussaCiaccio2012}), se modificó después de un estudio de cuatro años de duración de eventos de DPN, que arrojó 58 nuevos candidatos de elves \cite{Mussa2019}.
 
+El nuevo DTN verifica la evoluci\'on angular del frente de luz alrededor del primer p\'ixel disparado. Para un conjunto de p\'ixeles de la misma columna de \'este, el algoritmo requiere que al menos dos p\'ixeles antes y dos p\'ixeles desp\'ues del central tengan un pulso. Adem\'as, 80\% de \'estos deben mostrar un incremento en el tiempo del pulso. En comparación con los rayos cósmicos, los elves depositan una gran cantidad de luz, por lo que es necesario al menos un píxel con un pulso de amplitud mayor que 50 cuentas ADC \cite{Mussa2019}. En la figura \ref{fig:crs_elves} se puede observar un rayo c\'osmico registrado en la c\'amara como una l\'inea de p\'ixeles activados con un patr\'on geom\'etrico y una clara secuencia temporal, mientras que el elves se ve como un frente de onda con una evolución radial. 
 
+\begin{figure} 
 
+    \centering
+    \includegraphics[scale=0.6]{figures/cr_vs_elves.png}
+    \caption[Observaci\'on de rayos c\'osmicos y elves en un telescopio del FD del Observatorio Pierre Auger]{Observaci\'on de rayos c\'osmicos y elves en un telescopio del FD. Tiempo de propagaci\'on proyectado sobre la c\'amara
+    de A) un rayo c\'osmico y B) un elves. El tiempo se mide a partir del primer disparo del sistema, siendo los p\'ixeles azules los primeros en activarse y los rojos los \'ultimos. Se puede observar que el rayo c\'osmico activa una l\'inea de p\'ixeles con una clara secuencia temporal y que el elves se ve como un frente de onda con una evolución radial.
+    }
+    \label{fig:crs_elves}
+\end{figure}
+
+Desde el 2013 el Observatorio Pierre Auger ha estado tomando datos con este sistema de disparo para el estudio de elves. Durante el primer año se observ\'o que las trazas estándar del FD, de 72 $\mu$s de largo, no permit\'ian ver la luz emitida desde la regi\'on de la ionosfera localizada verticalmente sobre la fuente del rayo. Entonces, se modific\'o el esquema de lectura del FD (denominado Extended Readout) para adquirir tres cuadros consecutivos en estos casos especiales. Este cambio permite el estudio de la distribuci\'on angular de la emisi\'on de luz por encima del rayo. Los datos de elves desde 2014 hasta 2016 se tomaron con una traza m\'axima de 300 $\mu$s de longitud. A partir del 2017, esta traza se extendi\'o hasta 900 $\mu$s para observar completamente la regi\'on de alta intensidad de luz en la mayor\'ia de los eventos \cite{Mussa2019}. Hasta septiembre del año 2018 se han registrado m\'as de 4000 elves en el Observatorio Pierre Auger, como se muestra en el cuadro \ref{eventos_elves}, donde los observados en un solo sitio del FD se denominan Simples, en dos sitios son los Estéreo y en tres sitios los Tripletes.  
+
+\begin{table}[]\centering
+\caption{N\'umero de elves registrados en el FD desde el 2013 hasta el 2018 \cite{Mussa2019}}
+\label{eventos_elves}
+\begin{tabular}{lcccc}
+\rowcolor[HTML]{EFEFEF} 
+Año         & Simple & Estéreo & Triplete & Total                        \\
+2013 (4-12) & 214    & 83      & 8        & \cellcolor[HTML]{EFEFEF}305  \\
+2014        & 425    & 128     & 19       & \cellcolor[HTML]{EFEFEF}572  \\
+2015        & 686    & 117     & 11       & \cellcolor[HTML]{EFEFEF}814  \\
+2016        & 673    & 151     & 21       & \cellcolor[HTML]{EFEFEF}845  \\
+2017        & 906    & 297     & 52       & \cellcolor[HTML]{EFEFEF}1255 \\
+2018 (1-9)  & 527    & 99      & 15       & \cellcolor[HTML]{EFEFEF}641  \\
+\rowcolor[HTML]{EFEFEF} 
+Total       & 3431   & 875     & 126      & 4432                        
+\end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Reconstrucci\'on de la ubicaci\'on y la emisi\'on de luz de los elves}
+La reconstrucción apunta a una localización precisa en tiempo y espacio del rayo que origin\'o el elves, y a una medición de la distribución angular de la emisión de luz desde la base de la ionosfera. Para esto, lo primero que se hace es un ajuste de una o m\'as gaussianas asim\'etricas a la traza ADC de cada uno de los píxeles.
+
+La reconstrucci'on de la ubicaci'on del rayo se realiza en un proceso de cuatro pasos:
+\begin{enumerate}
+    \item Se realiza un conjunto de ajustes polinomiales en los tiempos $T_i$ del pulso de cada fila y cada columna, para obtener una primera estimaci\'on de la longitud y latitud del rayo. 
+    \item Se realiza otro ajuste para minimizar el $\chi$, donde $\Delta T_0$ es el tiempo 
+\end{enumerate}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{figures/emission_layer.png}
+    \caption[Geometr\'ia de reconstrucci\'on de los elves en el Observatorio Pierre Auger]{Geometr\'ia de reconstrucci\'on de los elves en el Observatorio Pierre Auger \cite{Mussa2019}. $\overline{\text{SP}}$ es la distancia de la fuente del EMP (S) a la capa de emisi\'on donde se produce el elves y $\overline{\text{PO}}$ es la distancia desde la capa de emisi\'on hasta el FD del observatorio. En el proceso de reconstrucci\'on se asume que la capa de emisi\'on no tiene grosor y que est\'a a una altitud de 92 Km respecto al FD.}
+    \label{fig:my_label}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Clasificación de elves múltiples}
+En un evento, cuando m\'as de diez p\'ixeles muestran m\'as de un pulso en las trazas, el elves se denomina m\'ultiple y se realiza un an\'alisis diferente al descrito anteriormente. El primer paso consiste en graficar la diferencia temporal entre los dos pulsos como se muestra en la figura \ref{fig:categorias}, donde estos eventos se pueden clasificar en cuatro categor\'ias \cite{Mussa2019}:
+
+\begin{enumerate}
+    \item Cuando $\Delta T$ es constante y muy pequeño ($<50 \,\mu$s) el doble pulso se puede explicar debido a un patrón de interferencia, producido por un EMP emitido por un rayo IC, que rebota en el suelo. 
+    \item En el caso donde $\Delta T \geq 50\mu$s y es constante, los eventos se pueden relacionar con las primeras etapas del rompimiento inicial de los rayos o con los return strokes muy cercanos. 
+    \item La tercera categor\'ia, donde $\Delta T$ es linealmente decreciente con el tiempo del pulso, se puede explicar como un elves simple superpuesto con alguna otra clase de luz transitoria, con un tiempo de subida mucho más largo.
+    \item En la \'ultima categor\'ia se tienen cambios m\'as abruptos de $\Delta T$ pertenecientes a elves con m\'as de dos pulsos en las trazas. Este patr\'on podr\'ia estar asociado como posible huella de la producci\'on de rayos gammas terrestres.
+    \end{enumerate}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=1]{figures/categorias.png}
+    \caption[Diferencia temporal entre dos pulsos de una traza versus el tiempo del primer pulso en los elves m\'ultiples]{Diferencia temporal entre dos pulsos de una traza versus el tiempo del primer pulso en los elves m\'ultiples, que se clasifican en cuatro categor\'ias \cite{Mussa2019}. }
+    \label{fig:categorias}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \bibliographystyle{unsrt}
 \bibliography{monografia}
